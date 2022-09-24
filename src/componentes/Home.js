@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
 
-//create your first component
 function Todolist() {
   let nombreRef = useRef(null);
   const [task, setTask] = useState([]);
@@ -46,7 +45,7 @@ function Todolist() {
                       className="fas fa-trash float-right"
                       id="eliminar"
                       onClick={() => deleteTask(index)}
-                    ></i>
+                    >Eliminar(X)</i>
                   </li>
                 );
               })}
