@@ -38,24 +38,29 @@ function Todolist() {
           <ul className="list-group list-group-flush">
             <div className="input-group mb-2 list-group list-group-flush">
               <input
+                /* El evento se ejecuta al liberar la tecla y se añade a agregarTarea*/
                 onKeyUp={agregarTarea}
-                ref={(r) => (tareaPendiente = r)}
+                /*Se deja como referencia guardada de tareaPendiente para acceder a ellos de forma posterior*/
+                ref={(referenciaDeElementoPendiente) =>
+                  (tareaPendiente = referenciaDeElementoPendiente)
+                }
                 type="text"
                 id="input"
                 class="list-group-item"
                 placeholder="¿Qué es lo que necesitas hacer?"
               />
             </div>
-
             {!!nuevaTarea.length > 0 &&
-              nuevaTarea.map((valor, index) => {
+              /*Si la longitud es mayor y distinta a cero, se creara un n uevo array, cuyo elemento actual será(primeraTarea), y tendra un indice incial(primerOrden)*/
+              nuevaTarea.map((primeraTarea, primerOrden) => {
                 return (
-                  <li class="list-group-item" key={index}>
-                    {valor}{" "}
+                  /*Componente de Bootstrap/List Group, tipo escalera*/
+                  <li class="list-group-item" key={primerOrden}>
+                    {primeraTarea}{" "}
                     <i
                       className="fas fa-trash float-right"
                       id="eliminar"
-                      onClick={() => borrarTarea(index)}
+                      onClick={() => borrarTarea(primerOrden)}
                     >
                       Eliminar(X)
                     </i>
