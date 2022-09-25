@@ -20,8 +20,11 @@ function Todolist() {
     }
   };
 
+  /*Se crea un const borrarTarea*/
   const borrarTarea = (index) => {
+    /*Se agregan un nuevo elemento a nuevaTarea al indice*/
     nuevaTarea.splice(index, 1);
+    /*Este nuevo elemento, llamado setNuevaTarea, se agrega al array existente de nuevaTarea*/
     setNuevaTarea([...nuevaTarea]);
   };
 
