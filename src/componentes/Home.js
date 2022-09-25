@@ -70,7 +70,7 @@ function Todolist() {
           </ul>
         </div>
         <div className="card-footer text-muted">
-          Pendientes N°: {nuevaTarea.length}
+          Tareas pendientes: {nuevaTarea.length}
         </div>
       </div>
     </div>
