@@ -56,20 +56,19 @@ function Todolist() {
                 return (
                   /*Componente de Bootstrap/List Group, tipo escalera*/
                   <li class="list-group-item" key={primerOrden}>
-                    {primeraTarea}{" "}
+                    {primeraTarea}
                     <i
                       class="fa-solid fa-trash-can"
                       id="eliminar"
                       onClick={() => borrarTarea(primerOrden)}
-                    >
-                    </i>
+                    ></i>
                   </li>
                 );
               })}
           </ul>
         </div>
         <div className="card-footer text-muted">
-          Cantidad de deberes que tengo que hacer: {nuevaTarea.length}
+          Pendientes N°: {nuevaTarea.length}
         </div>
       </div>
     </div>
