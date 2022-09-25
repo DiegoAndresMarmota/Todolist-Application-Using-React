@@ -33,7 +33,9 @@ function Todolist() {
       <div className="card mt-4">
         <div className="card-body">
           <h1 className="card-title text-center">
-            To-do List <i class="fa-solid fa-list-check"></i>
+            To-do List
+            <i class="fa-solid fa-list-check"></i>
+            {/*Componente de Fontawesome */}
           </h1>
           <ul className="list-group list-group-flush">
             <div className="input-group mb-2 list-group list-group-flush">
