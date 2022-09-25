@@ -5,14 +5,14 @@ function Todolist() {
   let tareaPendiente = useRef(null);
   const [nuevaTarea, setNuevaTarea] = useState([]);
 
-  const addTask = (e) => {
+  const agregarTarea = (e) => {
     if (e.keyCode === 13 && tareaPendiente.value !== "") {
       setNuevaTarea(nuevaTarea.concat(tareaPendiente.value));
       tareaPendiente.value = "";
     }
   };
 
-  const deleteTask = (index) => {
+  const borrarTarea = (index) => {
     nuevaTarea.splice(index, 1);
     setNuevaTarea([...nuevaTarea]);
   };
@@ -27,7 +27,7 @@ function Todolist() {
           <ul className="list-group list-group-flush">
             <div className="input-group mb-2 list-group list-group-flush">
               <input
-                onKeyUp={addTask}
+                onKeyUp={agregarTarea}
                 ref={(r) => (tareaPendiente = r)}
                 type="text"
                 id="input"
@@ -44,7 +44,7 @@ function Todolist() {
                     <i
                       className="fas fa-trash float-right"
                       id="eliminar"
-                      onClick={() => deleteTask(index)}
+                      onClick={() => borrarTarea(index)}
                     >Eliminar(X)</i>
                   </li>
                 );
