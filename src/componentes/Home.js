@@ -1,12 +1,18 @@
 import React from "react";
 import { useRef, useState } from "react";
 
+/* Se inicia función*/
 function Todolist() {
+  /*Se crea una variable tareaPendiente, con un valor persitente de tipo "Null*/
   let tareaPendiente = useRef(null);
+
+  /*Se crea un useState, para modificar cada nuevaTarea en setNuevaTarea*/
   const [nuevaTarea, setNuevaTarea] = useState([]);
 
-  const agregarTarea = (e) => {
-    if (e.keyCode === 13 && tareaPendiente.value !== "") {
+  /*Se crea un const agregarTarea*/
+  const agregarTarea = (evento) => {
+    /*Si el evento(Enter) y el valor de la tareaPendiente no es igual a null */
+    if (evento.keyCode === 13 && tareaPendiente.value !== "") {
       setNuevaTarea(nuevaTarea.concat(tareaPendiente.value));
       tareaPendiente.value = "";
     }
@@ -45,13 +51,17 @@ function Todolist() {
                       className="fas fa-trash float-right"
                       id="eliminar"
                       onClick={() => borrarTarea(index)}
-                    >Eliminar(X)</i>
+                    >
+                      Eliminar(X)
+                    </i>
                   </li>
                 );
               })}
           </ul>
         </div>
-        <div className="card-footer text-muted">Cantidad de deberes que tengo que hacer: {nuevaTarea.length}</div>
+        <div className="card-footer text-muted">
+          Cantidad de deberes que tengo que hacer: {nuevaTarea.length}
+        </div>
       </div>
     </div>
   );
