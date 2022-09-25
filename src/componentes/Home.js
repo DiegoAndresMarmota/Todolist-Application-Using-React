@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 
 /* Se inicia función*/
 function Todolist() {
-  /*Se crea una variable tareaPendiente, con un valor persitente de tipo "Null*/
+  /*Se crea una variable tareaPendiente, con un valor persistente de tipo "Null*/
   let tareaPendiente = useRef(null);
 
   /*Se crea un useState, para modificar cada nuevaTarea en setNuevaTarea*/
