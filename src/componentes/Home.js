@@ -13,7 +13,9 @@ function Todolist() {
   const agregarTarea = (evento) => {
     /*Si el evento(Enter) y el valor de la tareaPendiente no es igual a null */
     if (evento.keyCode === 13 && tareaPendiente.value !== "") {
+      /*...concadenar nuevaTarea al inicial (nulo) de la tarePendiente */
       setNuevaTarea(nuevaTarea.concat(tareaPendiente.value));
+      /*Mostrar valor de la TareaPendiente*/
       tareaPendiente.value = "";
     }
   };
