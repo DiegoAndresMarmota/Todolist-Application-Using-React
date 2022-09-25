@@ -2,19 +2,19 @@ import React from "react";
 import { useRef, useState } from "react";
 
 function Todolist() {
-  let nombreRef = useRef(null);
-  const [task, setTask] = useState([]);
+  let tareaPendiente = useRef(null);
+  const [nuevaTarea, setNuevaTarea] = useState([]);
 
   const addTask = (e) => {
-    if (e.keyCode === 13 && nombreRef.value !== "") {
-      setTask(task.concat(nombreRef.value));
-      nombreRef.value = "";
+    if (e.keyCode === 13 && tareaPendiente.value !== "") {
+      setNuevaTarea(nuevaTarea.concat(tareaPendiente.value));
+      tareaPendiente.value = "";
     }
   };
 
   const deleteTask = (index) => {
-    task.splice(index, 1);
-    setTask([...task]);
+    nuevaTarea.splice(index, 1);
+    setNuevaTarea([...nuevaTarea]);
   };
 
   return (
@@ -28,7 +28,7 @@ function Todolist() {
             <div className="input-group mb-2 list-group list-group-flush">
               <input
                 onKeyUp={addTask}
-                ref={(r) => (nombreRef = r)}
+                ref={(r) => (tareaPendiente = r)}
                 type="text"
                 id="input"
                 class="list-group-item"
@@ -36,8 +36,8 @@ function Todolist() {
               />
             </div>
 
-            {!!task.length > 0 &&
-              task.map((valor, index) => {
+            {!!nuevaTarea.length > 0 &&
+              nuevaTarea.map((valor, index) => {
                 return (
                   <li class="list-group-item" key={index}>
                     {valor}{" "}
@@ -51,7 +51,7 @@ function Todolist() {
               })}
           </ul>
         </div>
-        <div className="card-footer text-muted">Cantidad de deberes que tengo que hacer: {task.length}</div>
+        <div className="card-footer text-muted">Cantidad de deberes que tengo que hacer: {nuevaTarea.length}</div>
       </div>
     </div>
   );
