@@ -33,7 +33,7 @@ function Todolist() {
       <div className="card mt-4">
         <div className="card-body">
           <h1 className="card-title text-center">
-            To-do List <i className="fas fa-tasks"></i>
+            To-do List <i class="fa-solid fa-list-check"></i>
           </h1>
           <ul className="list-group list-group-flush">
             <div className="input-group mb-2 list-group list-group-flush">
@@ -58,11 +58,10 @@ function Todolist() {
                   <li class="list-group-item" key={primerOrden}>
                     {primeraTarea}{" "}
                     <i
-                      className="fas fa-trash float-right"
+                      class="fa-solid fa-trash-can"
                       id="eliminar"
                       onClick={() => borrarTarea(primerOrden)}
                     >
-                      Eliminar(X)
                     </i>
                   </li>
                 );
